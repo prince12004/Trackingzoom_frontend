@@ -1,0 +1,38 @@
+// Major Indian states/UTs with their most common cities. Not exhaustive — an "Other"
+// option reveals a free-text field for anything not listed.
+export const INDIAN_STATES_CITIES: Record<string, string[]> = {
+  'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Tirupati'],
+  'Arunachal Pradesh': ['Itanagar'],
+  Assam: ['Guwahati', 'Silchar', 'Dibrugarh'],
+  Bihar: ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur'],
+  Chandigarh: ['Chandigarh'],
+  Chhattisgarh: ['Raipur', 'Bhilai', 'Bilaspur'],
+  Delhi: ['New Delhi', 'Delhi'],
+  Goa: ['Panaji', 'Margao', 'Vasco da Gama'],
+  Gujarat: ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Gandhinagar'],
+  Haryana: ['Gurugram', 'Faridabad', 'Panipat', 'Ambala', 'Hisar'],
+  'Himachal Pradesh': ['Shimla', 'Manali', 'Dharamshala'],
+  'Jammu and Kashmir': ['Srinagar', 'Jammu'],
+  Jharkhand: ['Ranchi', 'Jamshedpur', 'Dhanbad'],
+  Karnataka: ['Bengaluru', 'Mysuru', 'Mangaluru', 'Hubballi'],
+  Kerala: ['Kochi', 'Thiruvananthapuram', 'Kozhikode', 'Thrissur'],
+  'Madhya Pradesh': ['Indore', 'Bhopal', 'Jabalpur', 'Gwalior'],
+  Maharashtra: ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Thane', 'Aurangabad'],
+  Manipur: ['Imphal'],
+  Meghalaya: ['Shillong'],
+  Mizoram: ['Aizawl'],
+  Nagaland: ['Kohima', 'Dimapur'],
+  Odisha: ['Bhubaneswar', 'Cuttack', 'Rourkela'],
+  Puducherry: ['Puducherry'],
+  Punjab: ['Ludhiana', 'Amritsar', 'Jalandhar', 'Chandigarh'],
+  Rajasthan: ['Jaipur', 'Jodhpur', 'Udaipur', 'Kota', 'Ajmer'],
+  Sikkim: ['Gangtok'],
+  'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli'],
+  Telangana: ['Hyderabad', 'Warangal', 'Nizamabad'],
+  Tripura: ['Agartala'],
+  'Uttar Pradesh': ['Noida', 'Lucknow', 'Kanpur', 'Ghaziabad', 'Agra', 'Varanasi', 'Meerut'],
+  Uttarakhand: ['Dehradun', 'Haridwar', 'Rishikesh'],
+  'West Bengal': ['Kolkata', 'Howrah', 'Durgapur', 'Siliguri'],
+};
+
+export const INDIAN_STATES = Object.keys(INDIAN_STATES_CITIES).sort();

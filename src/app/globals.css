@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins), var(--font-open-sans), system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-gray-200;
+  }
+
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shimmer-sweep 1.5s infinite;
+  }
+
+  @keyframes shimmer-sweep {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 outline-none transition-colors focus:border-brand-400 focus:ring-2 focus:ring-brand-100;
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container-page{
+  max-width: 92% !important;
+}
+.faqs{
+  font-size: 16px;
+  font-weight: 600;
+}
+.faqp{
+  font-size: 15px;
+  font-weight: 500;
+}
+.mainh{
+  line-height: 62px !important;
+}
+.mains_brand {
+  background-image: url("/assets/logo/pinlocation.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .mainh{
+    line-height: 45px !important;
+  }
+  .container-page{
+    max-width: 100% !important;
+  }
+}
+.searchhs{
+  max-width: 300px;
+}
+.text-gray-700{
+  font-size: 16px;
+}
