@@ -75,6 +75,9 @@ export default function HomePage() {
 
   return (
     <div>
+      {isLoading && (
+        <div aria-hidden className="min-h-[520px] bg-gradient-to-br from-brand-950 mains_brand lg:min-h-[600px]" />
+      )}
       {!isLoading && !hasHero && <Hero />}
       {ordered.map((section) => SECTION_COMPONENTS[section.key] || null)}
     </div>

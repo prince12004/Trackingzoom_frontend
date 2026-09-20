@@ -14,7 +14,7 @@ import { useToast } from '@/context/ToastContext';
 const TRUST_POINTS = ['Real-time live location', '24/7 customer support', 'Free professional installation*'];
 
 export function Hero() {
-  const { data: banners } = useQuery({
+  const { data: banners, isPending: bannersPending } = useQuery({
     queryKey: ['banners'],
     queryFn: async () => (await api.get<ApiEnvelope<Banner[]>>('/banners')).data.data,
   });
@@ -92,7 +92,11 @@ export function Hero() {
       </div>
 
       <div className="container-page relative grid gap-10 py-14 lg:grid-cols-2 lg:items-center lg:py-24">
-        <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          animate={bannersPending ? { opacity: 0, x: -24 } : { opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-accent-200 backdrop-blur-sm">
             <ShieldCheck className="h-3.5 w-3.5" /> Trusted by vehicle owners across India
           </span>
@@ -157,7 +161,7 @@ export function Hero() {
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={bannersPending ? { opacity: 0, scale: 0.95 } : { opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="relative aspect-[4/3] w-full"
         >
